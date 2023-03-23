@@ -14,7 +14,7 @@ function ChatWindow({ supabase }) {
   return (
     <div>
       <ChatScreen messages={messages} />
-      <InputBox />
+      <InputBox supabase={supabase} />
     </div>
   );
 }
