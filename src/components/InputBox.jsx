@@ -1,11 +1,12 @@
 import React from "react";
+import { supabase } from "../utilities";
 
-async function handleSend(supabase, data) {
+async function handleSend(data) {
   const message = { content: data };
   const { error } = await supabase.from("messages").insert(message);
 }
 
-function InputBox({ supabase }) {
+function InputBox() {
   const [input, setInput] = React.useState("");
   return (
     <>
@@ -16,7 +17,7 @@ function InputBox({ supabase }) {
       ></input>
       <button
         onClick={() => {
-          handleSend(supabase, input);
+          handleSend(input);
           setInput("");
         }}
       >
