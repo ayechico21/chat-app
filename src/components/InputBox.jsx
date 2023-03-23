@@ -1,7 +1,7 @@
 import React from "react";
 
 async function handleSend(supabase, data) {
-  const message = { username: "anonymous", content: data };
+  const message = { content: data };
   const { error } = await supabase.from("messages").insert(message);
 }
 
@@ -14,7 +14,14 @@ function InputBox({ supabase }) {
         value={input}
         onChange={(event) => setInput(event.target.value)}
       ></input>
-      <button onClick={() => handleSend(supabase, input)}>send</button>
+      <button
+        onClick={() => {
+          handleSend(supabase, input);
+          setInput("");
+        }}
+      >
+        send
+      </button>
     </>
   );
 }
