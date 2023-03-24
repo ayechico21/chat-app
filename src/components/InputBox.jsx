@@ -10,10 +10,12 @@ async function handleSend(data) {
 function InputBox() {
   const [input, setInput] = React.useState(""); // track input message
   return (
-    <>
+    <div className="bg-red-300 p-4 flex justify-content space-x-5 ">
       <input
+        className="flex items-center w-full rounded px-3 text-sm"
         type="text"
         value={input}
+        placeholder="Type your message…"
         onChange={(event) => setInput(event.target.value)}
         onKeyDown={(event) => {
           /*when user hits enter key => send message */
@@ -24,14 +26,15 @@ function InputBox() {
         }}
       ></input>
       <button
+        className="rounded-lg px-6 py-2 text-white bg-gray-700 hover:bg-red-500"
         onClick={() => {
           handleSend(input);
           setInput("");
         }}
       >
-        send
+        <span className="font-bold">Send</span>
       </button>
-    </>
+    </div>
   );
 }
 
