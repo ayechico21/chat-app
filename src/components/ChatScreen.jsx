@@ -1,7 +1,7 @@
 import React from "react";
 function ChatScreen({ messages }) {
   return (
-    <div className="flex flex-col flex-grow p-4 overflow-y-scroll">
+    <div className="flex flex-col flex-grow p-4 overflow-y-scroll h-80">
       {messages &&
         messages.map(({ id, content }) => {
           return (

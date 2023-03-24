@@ -4,7 +4,7 @@ import ChatWindow from "./components/ChatWindow";
 
 function App() {
   return (
-    <div className="flex flex-col flex-grow  bg-white shadow-xl rounded-lg overflow-hidden">
+    <div className=" bg-white shadow-xl rounded-lg">
       <WelcomeBanner />
       <ChatWindow />
     </div>
@@ -12,3 +12,5 @@ function App() {
 }
 
 export default App;
+
+// overflow-hidden

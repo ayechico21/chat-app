@@ -10,9 +10,9 @@ async function handleSend(data) {
 function InputBox() {
   const [input, setInput] = React.useState(""); // track input message
   return (
-    <div className="bg-red-300 p-4 flex justify-content space-x-5 ">
-      <input
-        className="flex items-center w-full rounded px-3 text-sm"
+    <div className="bg-red-300 p-6 flex justify-content space-x-4">
+      <textarea
+        className="flex items-center w-80 rounded px-3"
         type="text"
         value={input}
         placeholder="Type your message…"
@@ -24,9 +24,9 @@ function InputBox() {
             setInput("");
           }
         }}
-      ></input>
+      ></textarea>
       <button
-        className="rounded-lg px-6 py-2 text-white bg-gray-700 hover:bg-red-500"
+        className="rounded-lg px-6 py-2 text-white bg-gray-700 hover:bg-red-500 h-10 "
         onClick={() => {
           handleSend(input);
           setInput("");
